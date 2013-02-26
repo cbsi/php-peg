@@ -1,5 +1,5 @@
 <?php
-namespace hafriedlander\Bundle\Peg;
+namespace hafriedlander\Peg\Bundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
