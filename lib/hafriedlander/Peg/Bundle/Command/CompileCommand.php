@@ -42,7 +42,7 @@ class CompileCommand extends Command
             $outputFile = '.'.DIRECTORY_SEPARATOR.$outputFile;
         }
 
-        $peg = file_get_contents($input);
+        $peg = file_get_contents($inputFile);
         $code = Compiler::compile($peg);
 
         if ($isToStandardOutput) {
