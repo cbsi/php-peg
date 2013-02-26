@@ -1,9 +1,10 @@
 <?php
-namespace hafriendlander\Peg\Bundle\Command;
+namespace hafriedlander\Peg\Bundle\Command;
 
 use hafriedlander\Peg\Compiler;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
@@ -18,7 +19,7 @@ class CompileCommand extends Command
     {
         $this->setName('peg:compile')->setDescription('Compiles a PEG PHP grammar into a PHP file');
         $this->addOption('input', 'i', InputOption::VALUE_REQUIRED, 'Input file');
-        $this->addOption('output', 'i', InputOption::VALUE_OPTINAL, 'Output file ("-" for standard output)', null);
+        $this->addOption('output', 'o', InputOption::VALUE_OPTIONAL, 'Output file ("-" for standard output)', null);
     }
 
     /**
