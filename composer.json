@@ -1,0 +1,7 @@
+{
+    "name": "cbsi/php-peg",
+    "description": "PEG (parsing expression grammar) compiler for PHP",
+    "autoload": {
+        "psr-0": { "": "lib/" }
+    }
+}
