@@ -42,6 +42,10 @@ class CompileCommand extends Command
             $outputFile = '.'.DIRECTORY_SEPARATOR.$outputFile;
         }
 
+        if (!$isToStandardOutput && $outputFile[0] !== DIRECTORY_SEPARATOR) {
+            $outputFile = '.'.DIRECTORY_SEPARATOR.$outputFile;
+        }
+
         $peg = file_get_contents($inputFile);
         $code = Compiler::compile($peg);
 
