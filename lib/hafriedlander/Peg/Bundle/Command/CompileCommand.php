@@ -45,10 +45,16 @@ class CompileCommand extends Command
         $code = Compiler::compile($peg);
 
         if ($isToStandardOutput) {
-            $output->write($code);
+            fputs(STDOUT, $code);
             return;
         }
 
-        return @file_put_contents($outputFile, $code, LOCK_EX);
+        $ret = @file_put_contents($outputFile, $code, LOCK_EX);
+
+        if ($ret === false) {
+            $output->writeln(sprintf('<error>Unable to write to "%s". Verify permissions.</error>', $outputFile);
+        }
+
+        return $ret;
     }
 }
