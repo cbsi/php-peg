@@ -54,12 +54,8 @@ class CompileCommand extends Command
             return;
         }
 
-        $ret = @file_put_contents($outputFile, $code, LOCK_EX);
-
-        if ($ret === false) {
+        if (@file_put_contents($outputFile, $code, LOCK_EX) === false) {
             $output->writeln(sprintf('<error>Unable to write to "%s". Verify permissions.</error>', $outputFile));
         }
-
-        return $ret;
     }
 }
